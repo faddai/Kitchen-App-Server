@@ -15,4 +15,6 @@ class User < ApplicationRecord
             :nationality,
             :user_type,
             presence: true
+
+  validates :email, uniqueness: true
 end
