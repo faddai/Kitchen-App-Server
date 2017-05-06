@@ -16,5 +16,6 @@ class User < ApplicationRecord
             :user_type,
             presence: true
 
+  # Prevents users with the same email from being created
   validates :email, uniqueness: true
 end
