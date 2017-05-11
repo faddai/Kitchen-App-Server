@@ -12,6 +12,12 @@ module Api::V1
       render json: @order
     end
 
+    def user_order
+       @order = Order.where(["user_id ? AND serving_date ?", params[:user_id], params[:serving_date]])
+       render json: @order  
+    end
+      
+
     def create
       @order = Order.new(order_params)
 
