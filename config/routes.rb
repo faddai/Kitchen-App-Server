@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :menus
 
       get 'menus/:start_date/:end_date', to: 'menus#index'
-
+      get 'order/user', to: 'orders#user_order'
       get 'order_summary/breakfast/:serving_date', to: 'orders#order_summary_for_breakfast'
       get 'order_summary/lunch/:serving_date', to: 'orders#order_summary_for_lunch'
       get 'order_summary/supper/:serving_date', to: 'orders#order_summary_for_supper'
