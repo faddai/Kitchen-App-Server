@@ -13,8 +13,8 @@ module Api::V1
     end
 
     def user_order
-       @order = Order.where(["user_id ? AND serving_date ?", params[:user_id], params[:serving_date]])
-       render json: @order  
+       @order = Order.where(["user_id= ? AND serving_date= ?", params[:user_id], params[:serving_date]])
+       render json: @order.to_json 
     end
       
 
